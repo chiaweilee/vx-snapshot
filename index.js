@@ -17,9 +17,11 @@ export default function (store) {
         window.__snapshot__.push([mutation.type, _cloneDeep(mutation.payload)])
         // # the Prestige [][even]
         // But you wouldn't clap yet. Because making something disappear isn't enough; you have to bring it back. That's why every magic trick has a third act, the hardest part, the part we call "The Prestige".
-        window.__snapshot__.push(diff(_cloneDeep(state), window.__snapshot_l__ || window.__snapshot__[0]) || {})
+        window.__snapshot__.push(diff(window.__snapshot_l__ || window.__snapshot__[0], _cloneDeep(state)) || {})
         //
+        console.group(mutation.type)
         console.log(formatters.console.format(_last(window.__snapshot__)))
+        console.groupEnd()
         //
         window.__snapshot_l__ = _cloneDeep(store.state)
     })
