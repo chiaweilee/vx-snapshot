@@ -1,4 +1,7 @@
 # vx-snapshot
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/chiaweilee/vx-snapshot.svg)](https://greenkeeper.io/)
+
 snapshot plugin for Vuex
 
 ### Install
